@@ -1,271 +1,133 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Official site for the ICDAR 2021 Competition on Historical Map Segmentation. Download all material and review score boards here.">
-  <meta name="author" content="J. Chazalon; E. Carlinet; Y. Chen; J. Perret; C. Mallet; B. Duménieu; T. Géraud">
-  
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>ICDAR 2021 Competition on Historical Map Segmentation</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="The companion site to the QGIS training session for DigiKAR, July 11-12, 2023." /><meta name="author" content="Bertrand Duménieu" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>DigiKAR QGIS tutorial</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link href="stylesheets/extra.css" rel="stylesheet" />
     
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Overview";
-    var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "DigiKAR QGIS hands-on session, 11-12 July 2023";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSMK67B4JN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'G-HSMK67B4JN');
-  </script>
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> ICDAR 2021 Competition on Historical Map Segmentation</a>
-        <div role="search">
+          <a href="." class="icon icon-home"> DigiKAR QGIS tutorial
+        </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">Overview</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">DigiKAR QGIS hands-on session, 11-12 July 2023</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#final-results-and-material">🏆 Final results and material</a>
+    <li class="toctree-l2"><a class="reference internal" href="#details-registration">📝 Details &amp; registration</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#about-the-competition">🗺️ About the competition</a>
+    <li class="toctree-l2"><a class="reference internal" href="#technical-requirements">🧰 Technical requirements</a>
     </li>
     </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Tasks</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="tasks/task1/">Task 1: Detect Building Blocks</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="tasks/task2/">Task 2: Segment Map Content Area</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="tasks/task3/">Task 3: Locate Graticule Lines Intersections</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Resources</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="downloads/">Downloads</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="score_board/">🏆 Score board</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">More information</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="contact/">Contact</a>
-                    </li>
-                    <li class="toctree-l1"><a class="" href="https://twitter.com/ICDAR21_MapSeg">Twitter (external)</a>
-                    </li>
-                </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="programme/">Programme</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">More information</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="contact/">Contact</a>
+                  </li>
+              </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">ICDAR 2021 Competition on Historical Map Segmentation</a>
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">DigiKAR QGIS tutorial</a>
+        
       </nav>
-
-      
       <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
-    
-      
-    
-    <li>Overview</li>
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>DigiKAR QGIS hands-on session, 11-12 July 2023</li>
     <li class="wy-breadcrumbs-aside">
-      
-        <a href="https://github.com/icdar21-mapseg/icdar21-mapseg.github.io/edit/main/docs/index.md"
-          class="icon icon-github"> Edit on GitHub</a>
-      
+          <a href="https://github.com/digikar-qgis/digikar-qgis.github.io/edit/main/docs/index.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
-  
   <hr/>
 </div>
-          <div role="main">
-            <div class="section">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
               
-                <h1 id="overview">Overview</h1>
-<h2 id="final-results-and-material">🏆 Final results and material</h2>
-<p>The MapSeg challenge ran from November 2020 to April 2021,
-with <a href="score_board/">🏆 winners for each three tasks</a>
-who were invited to co-author the <a href="https://arxiv.org/abs/2105.13265">competition report</a>.
-<strong>We would like to thank all participants for their great submissions.</strong></p>
-<video style="max-width:100%; height:auto" controls>
-    <source src="../res/Comp-ST_04-teaser.mp4" type="video/mp4">
-    Sorry, your browser does not support the video tag.
-    <br/>
-    However, you can still download the video teaser by clicking <a href="res/Comp-ST_04-teaser.mp4">here</a>).
-</video>
-<p><strong>All material is now available:</strong><br />
-<a href="https://arxiv.org/abs/2105.13265"><img alt="arXiv" src="img/badge-report-arxiv.svg" /></a>
-   Competition report<br />
-<a href="https://doi.org/10.5281/zenodo.4817662"><img alt="DOI" src="img/badge-zenodo-4817662.svg" /></a>
-   Dataset with ground truth<br />
-<a href="https://doi.org/10.5281/zenodo.4818228"><img alt="DOI" src="img/badge-zenodo-4818228.svg" /></a>
-   Participants' submissions, detailed descriptions and evaluation reports<br />
-<a href="https://doi.org/10.5281/zenodo.4818401"><img alt="DOI" src="img/badge-zenodo-4818401.svg" /></a>
-   Evaluation tools<br />
-…and <a href="icdar-material/">material for ICDAR presentation</a>: <a href="res/Comp-ST_04-teaser.mp4">video teaser</a>, <a href="res/teaser_slides_v20210729-1106.pdf">slides</a>, <a href="res/presentation_slides_v20210729-1106.pdf">full presentation</a> and <a href="res/poster_v3_A1_compressed.pdf">poster</a>.</p>
-<p>To cite the competition, please cite the competition report:</p>
-<pre><code class="language-bibtex">@InProceedings{chazalon.21.icdar.mapseg,
-  author    = {Joseph Chazalon and Edwin Carlinet and Yizi Chen and Julien Perret and Bertrand Dum\'enieu and Cl\'ement Mallet and Thierry G\'eraud and Vincent Nguyen and Nam Nguyen and Josef Baloun and Ladislav Lenc and and Pavel Kr\'al},
-  title     = {ICDAR 2021 Competition on Historical Map Segmentation},
-  booktitle = {Proceedings of the 16th International Conference on Document Analysis and Recognition (ICDAR'21)},
-  year      = {2021},
-  address   = {Lausanne, Switzerland},
-}
-</code></pre>
-<!-- OLD CONTENT -->
-
-<!--
-Generated using https://online.officetimeline.com
-See source in timeline_data/source.xls
--->
-<!-- <center> -->
-<!-- [![Competition timeline](img/timeline.png)  ](img/timeline.png) -->
-<!-- *Competition timeline ([link to larger view](img/timeline.png))* -->
-<!-- </center> -->
-<!-- 
-<i class="fa fa-download fa-lg"></i> Downloads 
-[Test set (Tasks 2-3)](downloads.md#test-inputs-for-task-2-and-3){: .btn  .btn-danger}
-[Other sets](downloads.md){: .btn}
-[Evaluation tools](downloads.md#evaluation-tools){: .btn}
-
-<i class="fa fa-rss fa-lg"></i> Connect 
-[Subscribe to updates](contact.md#subscribe-to-updates){: .btn}
--->
-
-<p><em>Organized by</em>
-<em>the <a href="https://www.umr-lastig.fr/">LASTIG</a> team of the <a href="https://ign.fr/">IGN</a> (the French National Mapping Agency),</em>
-<em>the <a href="https://www.lrde.epita.fr/">R&amp;D Lab</a>. of the <a href="https://www.epita.fr/">EPITA</a> (French engineering school in computer science),</em>
-<em>and the <a href="http://crh.ehess.fr/">Center of Historical Studies</a> of the <a href="https://www.ehess.fr/">EHESS</a> (French graduate schools of social sciences).</em></p>
-<p><em>This work was partially funded by the French National Research Agency (ANR):</em>
-<em>Project SoDuCo, grant <a href="https://anr.fr/Projet-ANR-18-CE38-0013">ANR-18-CE38-0013</a>.</em>
-<em>We thank the <a href="https://bibliotheques-specialisees.paris.fr/">City of Paris</a> for granting us with the permission to use and reproduce the atlases used in this work.</em></p>
-<!-- 
-## 📅 Important dates
-
-| From       | To / On    | Title                                                                | Tasks |
-| ---------- | ---------- | -------------------------------------------------------------------- | ----- |
-|            | 2020-11-18 | Train and validation sets available                                  | all   |
-| 2020-11-18 | 2021-04-05 | Training phase                                                       | all   |
-|            | 2021-03-31 | Registration deadline for competition participants                   | all   |
-|            | 2021-04-05 | Test datasets available                                              | 1     |
-| 2021-04-05 | 2021-04-09 | Test phase                                                           | 1     |
-|            | 2021-04-09 | Submission deadline for results                                      | 1     |
-|            | 2021-04-12 | Test datasets available                                              | 2&3   |
-| 2021-04-12 | 2021-04-16 | Test phase                                                           | 2&3   |
-|            | 2021-04-16 | Submission deadline for results                                      | 2&3   |
-| 2021-04-12 | 2021-04-23 | Write short method description                                       | all   |
-|            | 2021-04-23 | Method descriptions due                                              | all   |
-|            | 2021-07-01 | Full data disclosure: Ground truth for test set, participant results | all   |
--->
-
-<!-- ## How to register?
-Please check the [Registration page](registration.md). -->
-
-<!-- ## How to download dataset and evaluation tools?
-- The **train and validation sets** for all tasks are available under the [Downloads page](downloads.md).
-- **Evaluation tools** will be **open sourced soon** so participant can check their results themselves.
-- **Test sets** for all tasks will be released **at the start of the test phase.**
-- **All competition material** (full dataset, participant results, evaluation tools) will be released publicly **at the end of the competition.** -->
-<h2 id="about-the-competition">🗺️ About the competition</h2>
-<p>This competition consisted in solving several challenges which arise during the digitization of historical maps.
-We were particularly interested in a large map series consisting in many Paris atlases over half a century (1860's-1940's).
-For each year, a set of approximately 20 sheets forms a tiled view of the city.
-Such maps are highly detailed and very accurate even by modern standards.
-The <strong>graphical nature of the content</strong> is visible in the full map sheet illustrated below.</p>
-<p><center>
-<img alt="A sample map sheet" src="img/map_large_in.jpg" /> 
-<em>A sample map sheet (<a href="img/map_large_in.jpg">link to larger version</a>)</em> <!-- FIXME add really larger image -->
-</center></p>
-<p>This material provides a very valuable resource for historians and a <strong>rich body of scientific challenges</strong> for the document analysis and recognition (DAR) community: map-related challenges (overlapping of many information layers) and document-related ones (document preservation).</p>
-<p><center>
-<img alt="Excerpt showing map-related challenges" src="img/challenges_map_related.jpg" />
-<em>Excerpt showing map-related challenges</em>
-</center></p>
-<p><center>
-<img alt="Excerpt showing document-related challenges" src="img/challenges_doc_related.jpg" />
-<em>Excerpt showing document-related challenges</em>
-</center></p>
-<p>We addressed tasks for three levels of scientific problems:</p>
+                <h1 id="digikar-qgis-hands-on-session-11-12-july-2023">DigiKAR QGIS hands-on session, 11-12 July 2023</h1>
+<p>The aim of this session is to provide academics and students in the field of spatial history with a comprehensive introduction to the GIS software QGIS.
+Particular attention will be given to the QGIS features that are most valuable for historical studies: <strong>Georeferencing</strong> and <strong>Vectorisation</strong>/Digitisation.</p>
+<p>The course will be divided into two main parts, each of which will involve methodology and technical exercises.
+The first part will cover the georeferencing capabilities of QGIS for assigning geographic coordinates to existing digitised maps.
+The second part will focus on vectorisation, i.e. the creation of geolocalised digital data from previously georeferenced maps.</p>
+<p>Particular attention will be paid to the collaborative capabilities of QGIS to collectively build a shared geohistorical database from historical maps.</p>
+<p><strong>This workshop is open to members of the <a href="https://leibniz-ifl.de">Leibniz Institute for Regional Geography</a> and the <a href="https://digikar.eu">DigiKAR project</a>. <span style="color:#ff9800">⚠️ Remote attendance is not possible</span></strong></p>
+<h2 id="details-registration">📝 Details &amp; registration</h2>
 <ul>
-<li><a href="tasks/task1/">Task 1: Detection of building blocks</a></li>
-<li><a href="tasks/task2/">Task 2: Segmentation of map content within map sheets</a></li>
-<li><a href="tasks/task3/">Task 3: Localization of graticule lines intersections</a></li>
+<li><strong>When</strong>: Tuesday 11 (9:30 - 18:00) and Wednesday 12 (9:30 - 15:00) July 2023  <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=MGdrOXE5Z25oaHFvNmVldHAwczBnaGRhaGMgYmVydHJhbmRkdW1lbmlldUBt&amp;tmsrc=bertranddumenieu%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_fr.gif"></a></li>
+<li><strong>Where</strong>: Leibniz-Institut für Länderkunde, Leipzig (IfL), Schongauerstraße 9, 04328 Leipzig. </li>
+<li><strong>Main language</strong>: English</li>
 </ul>
-<p>These tasks are necessary step during the digitization of historical maps, i.e. when gradually turning a raster image into a set of vector geometries projected onto a particular geographical coordinate reference system.
-Automatic approaches with good generalization power will provide an enormous gain for the Geographical Information Systems (GIS) communities looking for solutions when digitizing old maps,
-and create a great potential for many historical studies.</p>
-<!-- ## 🚀 Key strengths for participants
-- All datasets and evaluation tools are released with an **open license** as soon as they are available.
-- Winners of each task will be invited to **co-author** the report paper.
-- We propose unsolved research problems with an **important potential impact**. -->
+<p>If you would like to attend, please register by answering this survey <sup>ℹ️</sup>:</p>
+<p><center style="margin: 2rem">
+<a class="button-38" href="https://evento.renater.fr/survey/registration-to-the-digikar-hands-on-session-for-qgis-2drijkgp">Click here to register</a>
+ </center></p>
+<p><small> ℹ️ Renater is the French national research and education network, the personnal data in your answers remains within the UE and are not retained beyond the life of the survey. </small></p>
+<h2 id="technical-requirements">🧰 Technical requirements</h2>
+<ul>
+<li><strong>Bring your own laptop</strong>, with an external mouse. Vectorizing with the pad is awful!</li>
+<li>You need to be able to connect to a <strong>wifi network</strong> with no restrictions (eg. from a VPN). You will need to have access to a remote database on network port 5432.</li>
+<li><strong>Install <a href="https://www.qgis.org/fr/site/forusers/download.html">QGIS 3.30</a></strong> before the session.</li>
+</ul>
               
             </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tasks/task1/" class="btn btn-neutral float-right" title="Task 1: Detect Building Blocks">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="programme/" class="btn btn-neutral float-right" title="Programme">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
-    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+          
         </div>
       </div>
 
@@ -273,18 +135,21 @@ and create a great potential for many historical studies.</p>
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/icdar21-mapseg/icdar21-mapseg.github.io/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-        <span style="margin-left: 15px"><a href="tasks/task1/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/digikar-qgis/digikar-qgis.github.io" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+      <span><a href="programme/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
 </div>
     <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
     <script src="js/theme.js" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
@@ -297,6 +162,6 @@ and create a great potential for many historical studies.</p>
 </html>
 
 <!--
-MkDocs version : 1.1.2
-Build Date UTC : 2021-08-25 15:40:32.243929+00:00
+MkDocs version : 1.4.3
+Build Date UTC : 2023-05-30 15:44:16.935708+00:00
 -->
