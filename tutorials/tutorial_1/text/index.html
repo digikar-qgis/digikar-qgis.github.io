@@ -231,52 +231,56 @@ Here is a very nice demo to compare different cartographic projections: <a href=
 </blockquote>
 <p>Let's quickly examine the <a href="https://en.wikipedia.org/wiki/Web_Mercator_projection">CRS <code>WGS 84 / Pseudo-Mercator</code></a>. 
 To do this, search for this CRS using the field <code>Filter</code>  and select it (you can write the name or the identifier <code>EPSG:3857</code>).</p>
-<p>In (2), take a look at the <code>WKT</code> property, which provides the structured definition of this CRS. Here are the main elements of this CRS:
-```</p>
-<hr />
-<h2 id="block-0-definition">BLOCK #0 : DEFINITION</h2>
-<h2 id="projcrswgs-84-pseudo-mercator">PROJCRS["WGS 84 / Pseudo-Mercator",</h2>
-<h2 id="block-1-basegeogcrs">BLOCK #1 : BASEGEOGCRS</h2>
-<p>BASEGEOGCRS["WGS 84",<br />
+<p>In (2), take a look at the <code>WKT</code> property, which provides the structured definition of this CRS. Here are the main elements of this CRS:</p>
+<pre><code>------------------------------------------------------------
+BLOCK #0 : DEFINITION
+------------------------------------------------------------
+PROJCRS["WGS 84 / Pseudo-Mercator",
+------------------------------------------------------------
+BLOCK #1 : BASEGEOGCRS
+------------------------------------------------------------
+    BASEGEOGCRS["WGS 84",  
         ENSEMBLE["World Geodetic System 1984 ensemble",
         ...
-            ELLIPSOID["WGS 84",6378137,298.257223563,<br />
-                LENGTHUNIT["metre",1]],<br />
-            ENSEMBLEACCURACY[2.0]],<br />
-        PRIMEM["Greenwich",0,<br />
-            ANGLEUNIT["degree",0.0174532925199433]],<br />
-        ID["EPSG",4326]],</p>
-<hr />
-<h2 id="block-2-map-projection">BLOCK #2 : MAP PROJECTION</h2>
-<p>CONVERSION["Popular Visualisation Pseudo-Mercator",<br />
-            ID["EPSG",1024]],<br />
-        PARAMETER["Latitude of natural origin",0,<br />
-            ANGLEUNIT["degree",0.0174532925199433],<br />
-            ID["EPSG",8801]],<br />
-        PARAMETER["Longitude of natural origin",0,<br />
-            ANGLEUNIT["degree",0.0174532925199433],<br />
-            ID["EPSG",8802]],<br />
-        PARAMETER["False easting",0,<br />
-            LENGTHUNIT["metre",1],<br />
-            ID["EPSG",8806]],<br />
-        PARAMETER["False northing",0,<br />
-            LENGTHUNIT["metre",1],<br />
+            ELLIPSOID["WGS 84",6378137,298.257223563,  
+                LENGTHUNIT["metre",1]],  
+            ENSEMBLEACCURACY[2.0]],  
+        PRIMEM["Greenwich",0,  
+            ANGLEUNIT["degree",0.0174532925199433]],  
+        ID["EPSG",4326]],
+------------------------------------------------------------
+BLOCK #2 : MAP PROJECTION
+------------------------------------------------------------
+    CONVERSION["Popular Visualisation Pseudo-Mercator",  
+            ID["EPSG",1024]],  
+        PARAMETER["Latitude of natural origin",0,  
+            ANGLEUNIT["degree",0.0174532925199433],  
+            ID["EPSG",8801]],  
+        PARAMETER["Longitude of natural origin",0,  
+            ANGLEUNIT["degree",0.0174532925199433],  
+            ID["EPSG",8802]],  
+        PARAMETER["False easting",0,  
+            LENGTHUNIT["metre",1],  
+            ID["EPSG",8806]],  
+        PARAMETER["False northing",0,  
+            LENGTHUNIT["metre",1],  
             ID["EPSG",8807]]],
-    CS[Cartesian,2],<br />
-        AXIS["easting (X)",east,<br />
-            ORDER[1],<br />
-            LENGTHUNIT["metre",1]],<br />
-        AXIS["northing (Y)",north,<br />
-            ORDER[2],<br />
-            LENGTHUNIT["metre",1]],  </p>
-<hr />
-<h2 id="block-3-usage-documentation">BLOCK #3 : USAGE DOCUMENTATION</h2>
-<p>USAGE[<br />
-        SCOPE["Web mapping and visualisation."],<br />
-        AREA["World between 85.06°S and 85.06°N."],<br />
-        BBOX[-85.06,-180,85.06,180]],<br />
+    CS[Cartesian,2],  
+        AXIS["easting (X)",east,  
+            ORDER[1],  
+            LENGTHUNIT["metre",1]],  
+        AXIS["northing (Y)",north,  
+            ORDER[2],  
+            LENGTHUNIT["metre",1]],  
+------------------------------------------------------------
+BLOCK #3 : USAGE DOCUMENTATION
+------------------------------------------------------------
+    USAGE[  
+        SCOPE["Web mapping and visualisation."],  
+        AREA["World between 85.06°S and 85.06°N."],  
+        BBOX[-85.06,-180,85.06,180]],  
     ID["EPSG",3857]]
-```</p>
+</code></pre>
 <p>Without going much details, let's simply observe:</p>
 <ul>
 <li>[Block #0] This is a <strong>PROJ[ected]CRS</strong>, meaning it is a CRS with a cartographic projection. With this CRS, the coordinates are in 2 dimensions on a plane! On the other hand, <strong>GEOG[raphic]CRS</strong>, such as the previous <code>WGS 84</code> (EPSG:4326), do not carry a map projection; Corodinates in such CRSs are expressed in latitude and longitude. </li>
