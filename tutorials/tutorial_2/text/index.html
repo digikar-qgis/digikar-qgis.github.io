@@ -100,7 +100,7 @@
                 <h1 id="2-georefencing-historical-maps">2. Georefencing historical maps</h1>
 <h1 id="a-preliminary-steps">A. Preliminary steps</h1>
 <ol>
-<li>Download the data for this tutorial (⚠️~1.6Gb): <a href="https://www.swisstransfer.com/d/d9b7b3c8-8c4a-4b7d-b988-acd20da73d69">https://www.swisstransfer.com/d/d9b7b3c8-8c4a-4b7d-b988-acd20da73d69</a></li>
+<li>Download the data for this tutorial (⚠️~1.6Gb): https://www.swisstransfer.com/d/d9b7b3c8-8c4a-4b7d-b988-acd20da73d69</li>
 <li>Extract the zip archive to your working directory.</li>
 <li>Open the preconfigured QGIS project  <code>Tutorial_2/project.QGZ</code></li>
 <li>Select a <em>MeilenBlatt</em> to georeference in the list available in the layer <code>georeferencing_index</code>. <strong>Each participant should chose a different sheet</strong>.</li>
@@ -135,30 +135,30 @@ This will make the cursor automatically <em>snap</em> to the closest vertex in t
 <p>Unfortunately, the landscapes depicted in historical maps often no longer exist, making it challenging to find suitable GCPs.</p>
 <p>Furthermore, when dealing with maps composed of multiple sheets, such as the <em>Meilenblätter</em>, placing GCPs solely on geographic entities does not provide control over how adjacent sheets should be stitched together. In other words, the original grid structure of the sheet is not preserved during the georeferencing process.</p>
 <p>In soùme cases, maps like the Meilenblätter include a cartographic grid with well-documented parameters such as its resolution, dimensions, and orientation, which allows for its reconstruction in the geographic reference system.</p>
-<p>A commonly employed and effective approach is to define GCPs on this reconstructed grid. This approach ensures that the georeferenced sheets align correctly with each other. It also helps prevent interpretation errors regarding the correspondence between GCPs placed on different geographic entities. This method provides a robust solution while maintaining accuracy during the georeferencing process.</p>
+<p>A common and effective approach is to define GCPs on this reconstructed grid. This approach ensures that the georeferenced sheets align correctly with each other. It also helps prevent interpretation errors regarding the correspondence between GCPs placed on different geographic entities. This method provides a robust solution while maintaining accuracy during the georeferencing process.</p>
 <h2 id="b-gcp-based-georeferencing-on-the-meilenblatter-grid">b. GCP-based georeferencing on the <em>Meilenblätter</em> grid</h2>
 <blockquote>
 <p>🛠️</p>
 </blockquote>
 <ol>
 <li>Open the QGIS georeferencer from the menu <code>Layer-&gt;Georeferencer</code>.</li>
-<li>Click on ![[Pasted image 20230705182811.png]] to load the the original, non-georeferenced <em>Meilenblatt</em> .</li>
-<li>Use the <code>Add Point</code> tool ![[Pasted image 20230705183013.png]] to define GCPs on each corner of the sheet, both in the image view and the map view, using the recreated grid <code>georeferencing_index</code>.
+<li>Click on <img alt="" src="../attachments/Pasted%20image%2020230705182811.png" /> to load the the original, non-georeferenced <em>Meilenblatt</em> .</li>
+<li>Use the <code>Add Point</code> tool <img alt="" src="../attachments/Pasted%20image%2020230705183013.png" /> to define GCPs on each corner of the sheet, both in the image view and the map view, using the recreated grid <code>georeferencing_index</code>.
 ![[Pasted image 20230705184245.png]]</li>
-<li>Save the GCPs in  <code>Tutorial_2/output/d_{sheet_number}.png.points</code> using ![[Pasted image 20230705184956.png]] (or from <code>File-&gt;Save GCP Points as...</code>)</li>
+<li>Save the GCPs in  <code>Tutorial_2/output/d_{sheet_number}.png.points</code> using <img alt="" src="../attachments/Pasted%20image%2020230705184956.png" /> (or from <code>File-&gt;Save GCP Points as...</code>)</li>
 <li>
-<p>Next, click on <code>Transformation Settings</code> ![[Pasted image 20230705184409.png]] to access the settings for the transformation. Here, you can specify the type of transformation method to be applied and the target Coordinate Reference System (CRS), among other options.
+<p>Next, click on <code>Transformation Settings</code> <img alt="" src="../attachments/Pasted%20image%2020230705184409.png" /> to access the settings for the transformation. Here, you can specify the type of transformation method to be applied and the target Coordinate Reference System (CRS), among other options.
 To ensure the corners of the image match precisely, select "Thin Plate Spline" as the transform type and set the target CRS to <code>EPSG:3398 (RD/83 / 3-degree Gauss-Kruger zone 4)</code>.</p>
 </li>
 <li>
 <p>Save the georeferenced image as <code>Tutorial_2/output/d_{sheet_number}_georeferenced_grid.tif</code> and keep the resampling method unchanged:
-![[Pasted image 20230705184913.png]]</p>
+<img alt="" src="../attachments/Pasted%20image%2020230705184913.png" /></p>
 </li>
 <li>
-<p>Click <code>OK</code> to confirm the settings and initiate the georeferencing process by clicking the button ![[Pasted image 20230705185320.png]]. The georeferenced sheet should then be automatically loaded into the project.</p>
+<p>Click <code>OK</code> to confirm the settings and initiate the georeferencing process by clicking the button !<img alt="" src="../attachments/Pasted%20image%2020230705185320.png" />. The georeferenced sheet should then be automatically loaded into the project.</p>
 </li>
 <li>
-<p>Click <code>OK</code> and run the georefencing with the button![[Pasted image 20230705185320.png]]. The georeferenced sheet should be automatically loaded into the project.</p>
+<p>Click <code>OK</code> and run the georefencing with the button<img alt="" src="../attachments/Pasted%20image%2020230705185320.png" />. The georeferenced sheet should be automatically loaded into the project.</p>
 </li>
 <li>Notice how the georeferenced sheet does not align well with the HOV places or the OSM basemap. This is the result of two factors: the imperfect accuracy of the grid and the inherent spatial inaccuracies within the <em>Meilenblätter</em>. To achieve a more accurate georeferencing of the map content, we need to locally warp it. This can be accomplished by adding GCPs directly onto the geographic entities depicted in the map.</li>
 </ol>
@@ -169,7 +169,7 @@ To ensure the corners of the image match precisely, select "Thin Plate Spline" a
 <p>🛠️</p>
 </blockquote>
 <ol>
-<li>Open the georeferencer and load the original sheet image once again. Import the grid GCPs that were previously defined using the button ![[Pasted image 20230705190605.png]]. </li>
+<li>Open the georeferencer and load the original sheet image once again. Import the grid GCPs that were previously defined using the button <img alt="" src="../attachments/Pasted%20image%2020230705190605.png" />. </li>
 <li>Look for entities that are depicted both in the OSM reference map and in the sheet, i.e. entities in the <em>Meilenblatt</em> that still exist today. The best candidates for GCPs are <strong>churches</strong> since they were commonly used as reference points during the topographic survey of the <em>Meilenblätter</em>.</li>
 </ol>
 <blockquote>
@@ -177,7 +177,8 @@ To ensure the corners of the image match precisely, select "Thin Plate Spline" a
 - The more GCPs, the better, but it's preferable to have a few reliable points rather than many questionable ones.
 - Aim to cover the entire sheet with GCPs. Since the geometric transformation relies solely on the information provided by the GCPs, it's best to avoid leaving large areas of the sheet empty of GCPs to prevent dramatic distortions in those areas.
 - Tall and compact structures such as churches, bell towers, and castles are excellent candidates for GCPs. They were often used as triangulation points during the topographic survey of historical maps, making their positions on the map more accurate and reliable compared to features like roads or mountain summits.
-![[Pasted image 20230705191553.png|300]] ![[Pasted image 20230705191606.png|300]]
+<img alt="" src="../attachments/Pasted%20image%2020230705191553.png" />
+<img alt="" src="../attachments/Pasted%20image%2020230705191606.png" />
 <small>Figure: The same church depicted in a Meilenblatt and on OSM. The point is the location of that place regirstered in the HOV.</small></p>
 </blockquote>
 <ol>
