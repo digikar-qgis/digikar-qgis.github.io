@@ -54,11 +54,17 @@
               </ul>
               <p class="caption"><span class="caption-text">Tutorials</span></p>
               <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../../material/material/">🧰 Material</a>
+                  </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">1. Getting started with QGIS</a>
     <ul class="current">
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../tutorial_2/text/">2. Georefencing historical maps</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorial_3/text/">3. Introduction to vectorisation in QGIS</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorial_4/text/">4. Collaborative vectorisation</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">More information</span></p>
@@ -92,9 +98,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="1-getting-started-with-qgis">1. Getting started with QGIS</h1>
-<h1 id="introduction">Introduction</h1>
 <p>This tutorial is a step-by-step introduction to QGIS, from discovering the GUI to geospatial processing, through a series of practical exercises based on the geohistorical data leveraged in the DigiKAR project.</p>
-<p>With this first session you will also create and configure the QGIS project file that will be used during the two days and import all the useful data.</p>
 <p>A set of icons is used to highlight the nature of specific blocks or sections:
 - ⚠️ and ❗ denote an important information;
 - ℹ️ is used for optional info or details on a specific point.
@@ -116,8 +120,13 @@ We therefore ask you not to distribute or publish the content of this tutorial.<
 </blockquote>
 <p>Lastly, apologies for all the <em>frenchisms</em> in the text 🙂</p>
 <h1 id="a-preliminary-steps">A. Preliminary steps</h1>
-<h2 id="b-creating-a-new-qgis-project">b. Creating a new QGIS project</h2>
-<p>Before starting to experiment with the GUI, let's start by creating a project to hold all the data and configuration of the tutorials.</p>
+<h2 id="a-setting-up-the-working-directory">a. Setting up the working directory</h2>
+<ol>
+<li>Create a new folder in the location of your choice to store the material and projects of the next tutorials. This folder will be your working directory.</li>
+<li>Download the data for this tutorial (~1.5Mb): <a href="https://www.swisstransfer.com/d/64cf26cf-2824-4ae0-9dbe-be09ff12a4f5">https://www.swisstransfer.com/d/64cf26cf-2824-4ae0-9dbe-be09ff12a4f5</a></li>
+<li>Extract the zip archive to your working directory.## b. Creating a new QGIS project 
+Before starting to experiment with the GUI, let's start by creating a project to hold all the data and configuration of the tutorials.</li>
+</ol>
 <p>On start-up, QGIS is initialized with an empty project, labelled <code>Untilted Project</code>.</p>
 <hr />
 <blockquote>
@@ -283,10 +292,10 @@ BLOCK #3 : USAGE DOCUMENTATION
 </code></pre>
 <p>Without going much details, let's simply observe:</p>
 <ul>
-<li>[Block #0] This is a <strong>PROJ[ected]CRS</strong>, meaning it is a CRS with a cartographic projection. With this CRS, the coordinates are in 2 dimensions on a plane! On the other hand, <strong>GEOG[raphic]CRS</strong>, such as the previous <code>WGS 84</code> (EPSG:4326), do not carry a map projection; Corodinates in such CRSs are expressed in latitude and longitude. </li>
-<li>[Block #1] This CRS is based on a 3D model of the Earth defined in the CRS <code>WGS 84</code>  (EPSG:4326), which contains an ellipsoidal approximation the true shape of the Earth.</li>
-<li>[Block #2] This CRS projects the geographic coordinates on a plane using a mathematical transformation. The parameters for this transformation are described in this block.</li>
-<li>[Block #3] Lastly, Block #3 describes the extent to which this CRS is valid, ensuring it is not too imprecise for a particular region of the Earth.</li>
+<li>Block #0: This is a <strong>PROJ[ected]CRS</strong>, meaning it is a CRS with a cartographic projection. With this CRS, the coordinates are in 2 dimensions on a plane! On the other hand, <strong>GEOG[raphic]CRS</strong>, such as the previous <code>WGS 84</code> (EPSG:4326), do not carry a map projection; Corodinates in such CRSs are expressed in latitude and longitude. </li>
+<li>Block #1: This CRS is based on a 3D model of the Earth defined in the CRS <code>WGS 84</code>  (EPSG:4326), which contains an ellipsoidal approximation the true shape of the Earth.</li>
+<li>Block #2: This CRS projects the geographic coordinates on a plane using a mathematical transformation. The parameters for this transformation are described in this block.</li>
+<li>Block #3: Lastly, Block #3 describes the extent to which this CRS is valid, ensuring it is not too imprecise for a particular region of the Earth.</li>
 </ul>
 <blockquote>
 <p>ℹ️  When using a GEOGCRS like  <code>WGS 84</code> (EPSG:4326), QGIS arbitrarily uses an Equirectangular projection when such a CRS is used. This is why, at start, QGIS showed geographic coordinates and displayed a very stretched OSM map.</p>
@@ -527,7 +536,7 @@ Finally, click on <code>OK</code> to create the file. The result should be autom
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../../programme/" class="btn btn-neutral float-left" title="Programme"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../material/material/" class="btn btn-neutral float-left" title="🧰 Material"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../../tutorial_2/text/" class="btn btn-neutral float-right" title="2. Georefencing historical maps">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -555,7 +564,7 @@ Finally, click on <code>OK</code> to create the file. The result should be autom
         </span>
     
     
-      <span><a href="../../../programme/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../material/material/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../../tutorial_2/text/" style="color: #fcfcfc">Next &raquo;</a></span>

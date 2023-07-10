@@ -15,7 +15,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "2. Georefencing historical maps";
-        var mkdocs_page_input_path = "tutorials/tutorial_2/text.md";
+        var mkdocs_page_input_path = "tutorials/tutorial_2_bak/text.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -53,14 +53,12 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Tutorials</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../../material/material/">🧰 Material</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../tutorial_1/text/">1. Getting started with QGIS</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">2. Georefencing historical maps</a>
-    <ul class="current">
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tutorial_2/text/">2. Georefencing historical maps</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../../tutorial_3/text/">3. Introduction to vectorisation in QGIS</a>
                   </li>
@@ -86,10 +84,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>Tutorials &raquo;</li>
       <li>2. Georefencing historical maps</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/digikar-qgis/digikar-qgis.github.io/edit/main/docs/tutorials/tutorial_2/text.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/digikar-qgis/digikar-qgis.github.io/edit/main/docs/tutorials/tutorial_2_bak/text.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -100,9 +97,8 @@
                 <h1 id="2-georefencing-historical-maps">2. Georefencing historical maps</h1>
 <h1 id="a-preliminary-steps">A. Preliminary steps</h1>
 <ol>
-<li>Download the data for this tutorial (⚠️~1.6Gb): <a href="https://www.swisstransfer.com/d/d9b7b3c8-8c4a-4b7d-b988-acd20da73d69">https://www.swisstransfer.com/d/d9b7b3c8-8c4a-4b7d-b988-acd20da73d69</a></li>
-<li>Extract the zip archive to your working directory.</li>
-<li>Open the preconfigured QGIS project  <code>Tutorial_2/project.QGZ</code></li>
+<li>Copy the folder <code>Tutorial_2</code> to your working directory.</li>
+<li>Open the preconfigured QGIS project <code>Tutorial_2/project.QGZ</code></li>
 <li>Select a <em>MeilenBlatt</em> to georeference in the list available in the layer <code>georeferencing_index</code>. <strong>Each participant should chose a different sheet</strong>.</li>
 <li>In QGIS, enable automatic snapping from <code>Project-&gt;Snapping options...</code>. Toggle ![[Pasted image 20230705183316.png]] and keep the default options:
 <img alt="test" src="../attachments/Pasted%20image%2020230705183425.png" />
@@ -188,37 +184,9 @@ To ensure the corners of the image match precisely, select "Thin Plate Spline" a
 <li>Finally, save the GCPs as <code>Tutorial_2/output/d_{sheet_number}_dense_.png.points</code>.</li>
 <li>Compare the three different georeferencings visually and observe the effects of the warping on the resulting map, particularly on the edges of the sheet.</li>
 </ol>
-<h1 id="e-clipping-the-georeferenced-raster">E. Clipping the georeferenced raster</h1>
-<p>You've certainly noticed that the sheet is framed by a black border that contains no cartographic information and that overlaps with adjacent sheets</p>
-<p><img alt="" src="../attachments/Pasted%20image%2020230709140813.png" /></p>
-<p>It would be better to remove this border and clip the georeferenced raster so that it fits into its corresponding grid tile.</p>
-<p>The vector grids <code>grid_sheets</code> and <code>georeferencing_index</code> have been designed so that each tile is a polygon. We're going to reuse the tile polygone as a mask shape to clip the georeferenced sheet.</p>
-<ol>
-<li>
-<ol>
-<li>First, we need to isolate the tile corresponding to the sheet into a separate layer. Hide the georeferenced sheet  by unchecking it in the Layer Pane si the the tile in <code>georeferencing_index</code> becomes visible. Select this layer in the Layer Pane, then with the map tool <code>entity selection</code> <img alt="" src="../attachments/Pasted%20image%2020230709141322.png" />  click on the tile to select it. 
-<img alt="" src="../attachments/Pasted%20image%2020230709144216.png" /></li>
-</ol>
-</li>
-<li>Hit <code>CRTL+C</code> or go to <code>Edit-&gt;Copy entities</code> to copy the selected tile polygon.</li>
-<li>Then,  go to  <code>Edit-&gt;Paste entitie as...-&gt; New Vector Layer</code> to paste the polygon to a new layer and save it  as a GeoJSON  file to <code>Tutorial 2/output/mask.geosjon</code>. The resulting layer, containing only the copy-pasted tile, should be automatically loaded to QGIS as a new layer named <code>mask</code>.</li>
-<li>Now go to the menu <code>Raster-&gt;Extraction-&gt;Clip vector layer by mask layer</code> and configure clipping as below. Don't forget to check "Create an output alpha band" so that clipped borders are transparent.
-<img alt="" src="../attachments/Pasted%20image%2020230709142426.png" /></li>
-<li>This will create a new georeferenced TIF file. Choose to save it as <code>Tutorial 2/output/d_{sheet_number}_georeferenced_clipped.tif</code>, and click <code>Run</code>.</li>
-<li>The final map, georeferenced and without black borders, should now be displayed in QGIS:
-<img alt="" src="../attachments/Pasted%20image%2020230709142949.png" /></li>
-</ol>
-<p><center>This ends the tutorial on georeferencing in QGIS !</center></p>
-<p>Please do no delete the files <code>d_{sheet_number}_georeferenced_clipped.tif</code> and <code>d_{sheet_number}_georeferenced_clipped.tif</code>  . 
-We'll collect them at the end of the session to create a single georeferenced map based on everyone's contributions.
-Thank you !</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../tutorial_1/text/" class="btn btn-neutral float-left" title="1. Getting started with QGIS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../tutorial_3/text/" class="btn btn-neutral float-right" title="3. Introduction to vectorisation in QGIS">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -244,10 +212,6 @@ Thank you !</p>
         </span>
     
     
-      <span><a href="../../tutorial_1/text/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../tutorial_3/text/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
